@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    PYTHON BASICS FOR BEGINNERS - Home Page
+    Author: Ramesh (Student ID: 10637942)
+    Description: Main landing page for the Python Basics educational
+    website. This page introduces visitors to the site's purpose and
+    provides navigation to all main sections (Lessons, Exercises, Contact).
+    
+    File: index.html
+    Last Updated: February 2026
+    ============================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- 
+        META TAGS
+        charset: UTF-8 for universal character support
+        viewport: Responsive design for mobile devices
+        description: SEO meta description for search engines
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn Python programming from scratch with our free beginner-friendly tutorials. Master variables, loops, functions, and more with practical examples.">
+    <meta name="keywords"
+        content="Python, programming, beginners, tutorials, learn coding, variables, loops, functions">
+    <meta name="author" content="Python Basics for Beginners">
+
+    <!-- Page Title - Appears in browser tab -->
+    <title>Python Basics for Beginners | Learn Python Programming</title>
+
+    <!-- 
+        EXTERNAL STYLESHEETS
+        Google Fonts: Inter for body text, Fira Code for code blocks
+        style.css: Main stylesheet with all custom styles
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 
+        ============================================================
+        HEADER / NAVIGATION
+        Fixed navigation bar with logo and menu links.
+        Includes mobile-responsive hamburger menu toggle.
+        ============================================================
+    -->
+    <header>
+        <nav class="nav-container">
+            <!-- Logo with Python icon -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐍</span>
+                <span>PyBasics</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="lessons.html">Lessons</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button (hamburger icon) -->
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation (hidden by default) -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="active">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="exercises.html">Exercises</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 
+        ============================================================
+        MAIN CONTENT
+        Primary content area containing all page sections
+        ============================================================
+    -->
+    <main>
+        <!-- 
+            HERO SECTION
+            Large introductory section with headline, description, 
+            and call-to-action buttons to guide users to start learning
+        -->
+        <!-- Hero section with background image for visual impact -->
+        <section class="hero hero-with-image" style="background-image: url('images/hero-python.jpg');">
+            <div class="hero-content">
+                <!-- Tagline badge -->
+                <span class="hero-tagline">🎓 Free Python Learning Platform</span>
+
+                <!-- Main Headline with gradient text effect -->
+                <h1>Master <span class="gradient-text">Python</span> Programming from Zero</h1>
+
+                <!-- Introductory description -->
+                <p class="hero-description">
+                    Start your coding journey with our beginner-friendly tutorials.
+                    Learn variables, loops, functions, and more with clear explanations
+                    and practical examples designed for absolute beginners.
+                </p>
+
+                <!-- Call-to-action buttons -->
+                <div class="hero-buttons">
+                    <a href="lessons.html" class="btn btn-primary">
+                        Start Learning
+                        <span>→</span>
+                    </a>
+                    <a href="exercises.html" class="btn btn-secondary">
+                        Practice Exercises
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            FEATURES SECTION
+            Highlights the key benefits and learning paths
+            available on the website using feature cards
+        -->
+        <section class="features-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2>Why Learn With <span class="gradient-text">Us</span>?</h2>
+                    <p>
+                        We make learning Python simple, practical, and enjoyable
+                        for complete beginners with no prior coding experience.
+                    </p>
+                </div>
+
+                <!-- Feature Cards Grid -->
+                <div class="grid grid-3">
+                    <!-- Feature 1: Beginner Friendly -->
+                    <div class="card feature-card">
+                        <div class="card-icon">📚</div>
+                        <h3>Beginner Friendly</h3>
+                        <p>
+                            Our tutorials are written in plain English with no
+                            technical jargon. Perfect for those with zero
+                            programming experience.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2: Practical Examples -->
+                    <div class="card feature-card">
+                        <div class="card-icon">💻</div>
+                        <h3>Practical Examples</h3>
+                        <p>
+                            Every concept is explained with real code examples
+                            that you can understand and modify to reinforce
+                            your learning.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3: Step by Step -->
+                    <div class="card feature-card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Step-by-Step Path</h3>
+                        <p>
+                            Follow a structured learning path from basic syntax
+                            to writing your own functions. No confusion about
+                            what to learn next.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 
+                    IMAGE AND TEXT ROW
+                    Visual showcase with side-by-side image and description
+                    to make the page more creative and engaging
+                -->
+                <div class="image-text-row" style="margin-top: var(--space-3xl);">
+                    <div>
+                        <!-- Content image: Developer at work -->
+                        <img src="images/coding-laptop.jpg"
+                            alt="Developer coding on laptop with programming environment" class="content-image">
+                    </div>
+                    <div>
+                        <h3>Learn by <span class="gradient-text">Doing</span></h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Our tutorials don't just show you code — they explain <em>why</em>
+                            each line works. With interactive examples, hands-on exercises,
+                            and step-by-step walkthroughs, you'll build real confidence
+                            in programming.
+                        </p>
+                        <a href="exercises.html" class="btn btn-sm btn-primary mt-3">Try Exercises →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            TOPICS PREVIEW SECTION
+            Overview of the main Python topics covered in the lessons
+            with links to explore each topic in detail
+        -->
+        <section class="topics-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2>What You'll <span class="gradient-text">Learn</span></h2>
+                    <p>
+                        Our curriculum covers the essential Python concepts
+                        every beginner needs to build a strong foundation.
+                    </p>
+                </div>
+
+                <!-- Topics Grid -->
+                <div class="grid grid-2">
+                    <!-- Topic 1: Variables -->
+                    <a href="lessons.html#variables" class="card-link">
+                        <article class="card">
+                            <div class="topic-header">
+                                <span class="topic-number">1</span>
+                                <h3>Variables & Data Types</h3>
+                            </div>
+                            <p>
+                                Learn how to store and manage data using variables.
+                                Understand strings, numbers, booleans, and more.
+                            </p>
+                            <span class="btn btn-sm btn-secondary mt-2">Learn More →</span>
+                        </article>
+                    </a>
+
+                    <!-- Topic 2: Loops -->
+                    <a href="lessons.html#loops" class="card-link">
+                        <article class="card">
+                            <div class="topic-header">
+                                <span class="topic-number">2</span>
+                                <h3>Loops & Iteration</h3>
+                            </div>
+                            <p>
+                                Master for loops and while loops to repeat tasks
+                                efficiently. The key to automating repetitive work.
+                            </p>
+                            <span class="btn btn-sm btn-secondary mt-2">Learn More →</span>
+                        </article>
+                    </a>
+
+                    <!-- Topic 3: Conditionals -->
+                    <a href="lessons.html#conditionals" class="card-link">
+                        <article class="card">
+                            <div class="topic-header">
+                                <span class="topic-number">3</span>
+                                <h3>Conditionals (If/Else)</h3>
+                            </div>
+                            <p>
+                                Make your programs smart with decision-making.
+                                Learn if, elif, else statements and logical operators.
+                            </p>
+                            <span class="btn btn-sm btn-secondary mt-2">Learn More →</span>
+                        </article>
+                    </a>
+
+                    <!-- Topic 4: Functions -->
+                    <a href="lessons.html#functions" class="card-link">
+                        <article class="card">
+                            <div class="topic-header">
+                                <span class="topic-number">4</span>
+                                <h3>Functions</h3>
+                            </div>
+                            <p>
+                                Organize your code into reusable blocks. Create
+                                functions with parameters and return values.
+                            </p>
+                            <span class="btn btn-sm btn-secondary mt-2">Learn More →</span>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            CODE PREVIEW SECTION
+            Shows a sample of Python code to give visitors
+            a taste of what they'll be learning
+        -->
+        <section class="code-preview-section">
+            <div class="container container-narrow">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2>Your First <span class="gradient-text">Python Code</span></h2>
+                    <p>
+                        Here's a taste of what you'll be writing. Python is
+                        known for its clean, readable syntax.
+                    </p>
+                </div>
+
+                <!-- Code Block Example -->
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Python</span>
+                        <span>hello_world.py</span>
+                    </div>
+                    <pre><code><span class="code-comment"># This is your first Python program!</span>
+<span class="code-comment"># It prints a friendly greeting to the screen</span>
+
+<span class="code-keyword">def</span> <span class="code-function">greet</span>(name):
+    <span class="code-string">"""Say hello to someone."""</span>
+    message = <span class="code-string">f"Hello, {name}! Welcome to Python."</span>
+    <span class="code-keyword">return</span> message
+
+<span class="code-comment"># Let's use our function</span>
+greeting = greet(<span class="code-string">"Beginner"</span>)
+<span class="code-function">print</span>(greeting)
+
+<span class="code-comment"># Output: Hello, Beginner! Welcome to Python.</span></code></pre>
+                </div>
+
+                <!-- Note box -->
+                <div class="note-box">
+                    <h4>💡 Don't worry!</h4>
+                    <p>
+                        If this code looks confusing now, that's completely normal!
+                        Our lessons break down each concept step-by-step so you'll
+                        understand every line.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            YOUTUBE VIDEO SECTION
+            Embedded YouTube tutorial video to provide an 
+            alternative learning experience via video content
+        -->
+        <section class="video-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Watch & <span class="gradient-text">Learn</span></h2>
+                    <p>
+                        Prefer watching videos? Check out these recommended
+                        Python tutorials from expert educators on YouTube.
+                    </p>
+                </div>
+
+                <div class="grid grid-2">
+                    <!-- YouTube Video 1: Python for Beginners -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8"
+                                title="Python for Beginners - Learn Python in 1 Hour"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>🎬 Python for Beginners</h4>
+                            <p>A comprehensive beginner's guide covering Python fundamentals in simple, easy-to-follow
+                                steps.</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video 2: Python Full Course -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/rfscVS0vtbw"
+                                title="Learn Python - Full Course for Beginners"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>🎬 Learn Python - Full Course</h4>
+                            <p>FreeCodeCamp's popular full-length Python tutorial — a complete course from zero to hero.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            IMAGE GALLERY SECTION
+            Visually engaging gallery showcasing the programming journey
+        -->
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your <span class="gradient-text">Programming Journey</span></h2>
+                    <p>From writing your first line of code to building real projects</p>
+                </div>
+
+                <!-- Image card gallery with overlay text -->
+                <div class="grid grid-3">
+                    <div class="image-card">
+                        <img src="images/programming.jpg" alt="Close-up of programming code on a monitor screen">
+                        <div class="image-overlay">
+                            <h3>Learn the Basics</h3>
+                            <p>Start with Python fundamentals</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="images/code-screen.jpg" alt="Developer working with multiple code files on screen">
+                        <div class="image-overlay">
+                            <h3>Practice Daily</h3>
+                            <p>Solve coding exercises</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="images/developer.jpg" alt="Programming workspace with laptop and code editor">
+                        <div class="image-overlay">
+                            <h3>Build Projects</h3>
+                            <p>Create real-world applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            CALL TO ACTION SECTION
+            Final section encouraging users to start learning
+        -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Ready to Start Your <span class="gradient-text">Coding Journey</span>?</h2>
+                <p class="hero-description">
+                    Join thousands of beginners who have learned Python with our tutorials.
+                    It's free, beginner-friendly, and designed for success.
+                </p>
+                <div class="hero-buttons">
+                    <a href="lessons.html" class="btn btn-primary">
+                        Begin Learning Now
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+        ============================================================
+        FOOTER
+        Site footer with navigation links, external resources, 
+        and copyright information
+        ============================================================
+    -->
+    <footer>
+        <div class="container">
+            <!-- Footer Content Grid -->
+            <div class="footer-content">
+                <!-- About Column -->
+                <div class="footer-section">
+                    <h4>🐍 PyBasics</h4>
+                    <p>
+                        A free educational resource for learning Python
+                        programming fundamentals. Designed for complete
+                        beginners with no prior experience.
+                    </p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="lessons.html">Lessons</a>
+                        <a href="exercises.html">Exercises</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+
+                <!-- Resources Column - External Links -->
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <nav class="footer-links">
+                        <!-- External links open in new tab for user convenience -->
+                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python.org</a>
+                        <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer">W3Schools
+                            Python</a>
+                        <a href="https://wiki.python.org/moin/BeginnersGuide" target="_blank"
+                            rel="noopener noreferrer">Python Wiki</a>
+                    </nav>
+                </div>
+
+                <!-- Topics Column -->
+                <div class="footer-section">
+                    <h4>Topics</h4>
+                    <nav class="footer-links">
+                        <a href="lessons.html#variables">Variables</a>
+                        <a href="lessons.html#loops">Loops</a>
+                        <a href="lessons.html#conditionals">Conditionals</a>
+                        <a href="lessons.html#functions">Functions</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Python Basics for Beginners. Educational purposes only.</p>
+                <p>Made with ❤️ for Python learners</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+        ============================================================
+        JAVASCRIPT
+        Minimal JavaScript for mobile menu toggle functionality
+        ============================================================
+    -->
+    <script>
+        // Function to toggle mobile navigation menu
+        // This provides a hamburger menu experience on mobile devices
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileNav.contains(event.target) && !mobileBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

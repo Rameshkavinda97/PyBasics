@@ -1,0 +1,1365 @@
+/* ============================================================
+   PYTHON BASICS FOR BEGINNERS - Main Stylesheet
+   Author: Ramesh (Student ID: 10637942)
+   Description: External CSS file for the Python Basics educational website.
+   This stylesheet implements a modern dark mode design with Python 
+   branding colors (blue #306998, yellow #FFE873), glassmorphism effects,
+   smooth animations, and responsive layouts.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Variables)
+   Purpose: Define reusable color palette, typography, and 
+   spacing values for consistent theming throughout the site.
+   ------------------------------------------------------------ */
+:root {
+    /* Primary Colors - Python's official brand colors */
+    --python-blue: #306998;
+    --python-yellow: #FFE873;
+    --python-blue-dark: #1e4a6d;
+    --python-blue-light: #4b8bbe;
+
+    /* Background Colors - Dark mode palette */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.06);
+
+    /* Text Colors - High contrast for readability */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    /* Accent Colors - For highlights and interactions */
+    --accent-gradient: linear-gradient(135deg, var(--python-blue) 0%, var(--python-yellow) 100%);
+    --accent-glow: rgba(48, 105, 152, 0.4);
+
+    /* Code Block Colors - Syntax highlighting support */
+    --code-bg: #1a1a2e;
+    --code-border: rgba(255, 255, 255, 0.1);
+    --code-text: #e0e0e0;
+    --code-keyword: #ff79c6;
+    --code-string: #50fa7b;
+    --code-comment: #6272a4;
+
+    /* Typography - Using Google Fonts */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-code: 'Fira Code', 'Consolas', monospace;
+
+    /* Spacing Scale - Consistent spacing system */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Border Radius - Rounded corners */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 50px;
+
+    /* Shadows - Depth and elevation */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px var(--accent-glow);
+
+    /* Transitions - Smooth animations */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ------------------------------------------------------------
+   2. CSS RESET & BASE STYLES
+   Purpose: Normalize browser defaults and establish base styles
+   for consistent rendering across different browsers.
+   ------------------------------------------------------------ */
+
+/* Universal box-sizing for easier layout calculations */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* Base body styles with dark background */
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Subtle animated gradient background */
+    background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(48, 105, 152, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(255, 232, 115, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid var(--python-yellow);
+    outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------
+   3. TYPOGRAPHY
+   Purpose: Define heading sizes, paragraph styles, and text 
+   utilities for consistent typographic hierarchy.
+   ------------------------------------------------------------ */
+
+/* Heading styles with gradient accent option */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+}
+
+/* Gradient text effect for special headings */
+.gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Highlighted/accent text */
+.highlight {
+    color: var(--python-yellow);
+}
+
+/* ------------------------------------------------------------
+   4. LAYOUT CONTAINERS
+   Purpose: Define max-width containers and grid structures
+   for consistent page layouts across all pages.
+   ------------------------------------------------------------ */
+
+/* Main content wrapper */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Narrow container for readable text content */
+.container-narrow {
+    max-width: 800px;
+}
+
+/* Section spacing for visual breathing room */
+section {
+    padding: var(--space-3xl) 0;
+}
+
+/* Flexbox row utility */
+.flex {
+    display: flex;
+}
+
+/* Grid system for cards and multi-column layouts */
+.grid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Center alignment utility */
+.text-center {
+    text-align: center;
+}
+
+/* ------------------------------------------------------------
+   5. NAVIGATION HEADER
+   Purpose: Sticky top navigation bar with logo, nav links,
+   and mobile hamburger menu for responsive design.
+   ------------------------------------------------------------ */
+
+/* Fixed header with glassmorphism effect */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background var(--transition-normal);
+}
+
+/* Navigation container layout */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo styling with Python icon */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Desktop navigation links */
+.nav-links {
+    display: flex;
+    gap: var(--space-xl);
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: var(--space-sm) 0;
+    transition: color var(--transition-fast);
+}
+
+/* Hover effect with animated underline */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width var(--transition-normal);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-sm);
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: transform var(--transition-fast);
+}
+
+/* Mobile navigation (hidden by default) */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(20px);
+    padding: var(--space-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: var(--space-md);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-fast);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+    color: var(--python-yellow);
+    padding-left: var(--space-lg);
+}
+
+/* ------------------------------------------------------------
+   6. HERO SECTION
+   Purpose: Large introductory section with headline, 
+   description, and call-to-action buttons.
+   ------------------------------------------------------------ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px var(--space-lg) var(--space-3xl);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background orbs for visual interest */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 15s ease-in-out infinite;
+}
+
+.hero::before {
+    width: 500px;
+    height: 500px;
+    background: var(--python-blue);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.hero::after {
+    width: 400px;
+    height: 400px;
+    background: var(--python-yellow);
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 5s;
+}
+
+/* Hero content wrapper */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+/* Hero subtitle/tagline */
+.hero-tagline {
+    display: inline-block;
+    background: rgba(255, 232, 115, 0.1);
+    border: 1px solid rgba(255, 232, 115, 0.3);
+    color: var(--python-yellow);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Hero main heading */
+.hero h1 {
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* Hero description paragraph */
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2xl);
+    animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+
+/* Hero button group */
+.hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.6s backwards;
+}
+
+/* ------------------------------------------------------------
+   7. BUTTONS
+   Purpose: Primary, secondary, and outline button styles with
+   hover animations and interactive states.
+   ------------------------------------------------------------ */
+
+/* Base button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+/* Primary button with gradient */
+.btn-primary {
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px var(--accent-glow);
+}
+
+/* Secondary/outline button */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Small button variant */
+.btn-sm {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   8. CARDS
+   Purpose: Glassmorphism card components for features,
+   lessons, and content blocks throughout the site.
+   ------------------------------------------------------------ */
+
+/* Base card with glass effect */
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card hover state with glow */
+.card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Card icon container */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+}
+
+/* Card title */
+.card h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+/* Card description */
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Card with link styling */
+.card-link {
+    display: block;
+    text-decoration: none;
+}
+
+.card-link:hover .card-title {
+    color: var(--python-yellow);
+}
+
+/* Feature card specific styling */
+.feature-card {
+    text-align: center;
+}
+
+.feature-card .card-icon {
+    margin: 0 auto var(--space-lg);
+}
+
+/* ------------------------------------------------------------
+   9. CODE BLOCKS
+   Purpose: Styled code blocks for Python examples with
+   syntax highlighting colors and copy functionality.
+   ------------------------------------------------------------ */
+
+/* Code block container */
+.code-block {
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Code block header with language label */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--code-border);
+    margin: calc(-1 * var(--space-lg));
+    margin-bottom: var(--space-md);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Code element styles */
+code {
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: var(--code-text);
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Inline code styling */
+p code,
+li code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: var(--python-yellow);
+}
+
+/* Syntax highlighting classes */
+.code-keyword {
+    color: var(--code-keyword);
+}
+
+.code-string {
+    color: var(--code-string);
+}
+
+.code-comment {
+    color: var(--code-comment);
+    font-style: italic;
+}
+
+.code-function {
+    color: #8be9fd;
+}
+
+.code-number {
+    color: #bd93f9;
+}
+
+/* ------------------------------------------------------------
+   10. SECTION HEADERS
+   Purpose: Consistent section title styling with optional
+   subtitle and decorative elements.
+   ------------------------------------------------------------ */
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-3xl);
+}
+
+.section-header h2 {
+    margin-bottom: var(--space-md);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Decorative line under section header */
+.section-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-gradient);
+    margin: var(--space-lg) auto 0;
+    border-radius: 2px;
+}
+
+/* ------------------------------------------------------------
+   11. LESSONS & CONTENT SECTIONS
+   Purpose: Styling for lesson content, topic boxes,
+   and educational content blocks.
+   ------------------------------------------------------------ */
+
+/* Topic section container */
+.topic-section {
+    margin-bottom: var(--space-3xl);
+}
+
+/* Topic header with icon */
+.topic-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.topic-number {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--bg-primary);
+}
+
+/* Tips and notes boxes */
+.tip-box,
+.note-box {
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.tip-box {
+    background: rgba(80, 250, 123, 0.1);
+    border-left: 4px solid #50fa7b;
+}
+
+.note-box {
+    background: rgba(255, 232, 115, 0.1);
+    border-left: 4px solid var(--python-yellow);
+}
+
+.tip-box h4,
+.note-box h4 {
+    margin-bottom: var(--space-sm);
+    font-size: 1rem;
+}
+
+/* Exercise card styling */
+.exercise-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.exercise-card h4 {
+    color: var(--python-yellow);
+    margin-bottom: var(--space-sm);
+}
+
+.exercise-difficulty {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.difficulty-easy {
+    background: rgba(80, 250, 123, 0.2);
+    color: #50fa7b;
+}
+
+.difficulty-medium {
+    background: rgba(255, 232, 115, 0.2);
+    color: var(--python-yellow);
+}
+
+.difficulty-hard {
+    background: rgba(255, 85, 85, 0.2);
+    color: #ff5555;
+}
+
+/* ------------------------------------------------------------
+   12. FOOTER
+   Purpose: Site footer with navigation, social links,
+   copyright, and additional resources.
+   ------------------------------------------------------------ */
+
+footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-3xl) 0 var(--space-xl);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.footer-section h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--python-yellow);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* External link indicator */
+a[target="_blank"]::after {
+    content: ' ↗';
+    font-size: 0.8em;
+}
+
+/* ------------------------------------------------------------
+   13. ANIMATIONS
+   Purpose: Keyframe animations for entrance effects,
+   floating elements, and interactive feedback.
+   ------------------------------------------------------------ */
+
+/* Fade in from below */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating animation for background orbs */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(20px, -20px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-10px, 20px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(-20px, -10px) rotate(3deg);
+    }
+}
+
+/* Pulse animation for emphasis */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Scroll-triggered animation class */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+/* ------------------------------------------------------------
+   14. RESPONSIVE DESIGN
+   Purpose: Media queries for tablet and mobile layouts,
+   ensuring the site works on all screen sizes.
+   ------------------------------------------------------------ */
+
+/* Tablet breakpoint (768px and below) */
+@media (max-width: 768px) {
+
+    /* Hide desktop nav, show mobile menu button */
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* Reduce hero section height */
+    .hero {
+        min-height: auto;
+        padding: 120px var(--space-md) var(--space-2xl);
+    }
+
+    /* Stack hero buttons vertically */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Reduce section padding */
+    section {
+        padding: var(--space-2xl) 0;
+    }
+
+    /* Full width cards */
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer stacks vertically */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Mobile breakpoint (480px and below) */
+@media (max-width: 480px) {
+
+    /* Smaller base font */
+    html {
+        font-size: 14px;
+    }
+
+    /* Reduce container padding */
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    /* Smaller cards padding */
+    .card {
+        padding: var(--space-lg);
+    }
+
+    /* Code blocks scroll horizontally */
+    .code-block {
+        padding: var(--space-md);
+        font-size: 0.85rem;
+    }
+}
+
+/* Large screen optimization (1400px and above) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    html {
+        font-size: 18px;
+    }
+}
+
+/* ------------------------------------------------------------
+   15. IMAGES & MEDIA
+   Purpose: Styles for hero background images, content images,
+   image galleries, and visual media throughout the site.
+   ------------------------------------------------------------ */
+
+/* Hero section with background image overlay */
+.hero-with-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay on hero images for text readability */
+.hero-with-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(10, 10, 15, 0.95) 0%,
+            rgba(10, 10, 15, 0.88) 50%,
+            rgba(48, 105, 152, 0.8) 100%);
+    z-index: 0;
+}
+
+/* Strong text shadow on hero text for clear readability over images */
+.hero-with-image .hero-content h1,
+.hero-with-image .hero-content .hero-tagline,
+.hero-with-image .hero-content .hero-description {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Content images with rounded corners and hover zoom */
+.content-image {
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    object-fit: cover;
+}
+
+.content-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Image with caption container */
+.image-with-caption {
+    margin: var(--space-xl) 0;
+    text-align: center;
+}
+
+.image-with-caption figcaption {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: var(--space-sm);
+    font-style: italic;
+}
+
+/* Side-by-side image and text layout */
+.image-text-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    margin: var(--space-2xl) 0;
+}
+
+.image-text-row.reverse {
+    direction: rtl;
+}
+
+.image-text-row.reverse>* {
+    direction: ltr;
+}
+
+/* Image card - image inside a card with overlay text */
+.image-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.image-card:hover img {
+    transform: scale(1.1);
+}
+
+.image-card .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xl);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.image-card .image-overlay h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.image-card .image-overlay p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Floating image with glow effect */
+.floating-image {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glow);
+    animation: float 10s ease-in-out infinite;
+}
+
+/* Image gallery grid */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+}
+
+/* ------------------------------------------------------------
+   16. YOUTUBE VIDEO EMBEDS
+   Purpose: Responsive YouTube iframe containers with
+   proper aspect ratio and styling.
+   ------------------------------------------------------------ */
+
+/* Responsive video wrapper - maintains 16:9 aspect ratio */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    margin: var(--space-xl) 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-lg);
+}
+
+/* Video card - video inside a styled card */
+.video-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.video-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.video-card .video-container {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.video-card .video-info {
+    padding: var(--space-lg);
+}
+
+.video-card .video-info h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.video-card .video-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive image-text row for smaller screens */
+@media (max-width: 768px) {
+    .image-text-row {
+        grid-template-columns: 1fr;
+    }
+
+    .image-text-row.reverse {
+        direction: ltr;
+    }
+}
+
+/* ------------------------------------------------------------
+   17. UTILITY CLASSES
+   Purpose: Reusable helper classes for common styling needs
+   such as spacing, display, and text alignment.
+   ------------------------------------------------------------ */
+
+/* Margin utilities */
+.mt-1 {
+    margin-top: var(--space-sm);
+}
+
+.mt-2 {
+    margin-top: var(--space-md);
+}
+
+.mt-3 {
+    margin-top: var(--space-lg);
+}
+
+.mt-4 {
+    margin-top: var(--space-xl);
+}
+
+.mb-1 {
+    margin-bottom: var(--space-sm);
+}
+
+.mb-2 {
+    margin-bottom: var(--space-md);
+}
+
+.mb-3 {
+    margin-bottom: var(--space-lg);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-xl);
+}
+
+/* Padding utilities */
+.p-1 {
+    padding: var(--space-sm);
+}
+
+.p-2 {
+    padding: var(--space-md);
+}
+
+.p-3 {
+    padding: var(--space-lg);
+}
+
+.p-4 {
+    padding: var(--space-xl);
+}
+
+/* Display utilities */
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+/* Text alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Flexbox alignment */
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Width utilities */
+.w-100 {
+    width: 100%;
+}
+
+.max-w-800 {
+    max-width: 800px;
+}
+
+/* Visibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

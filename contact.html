@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    PYTHON BASICS FOR BEGINNERS - Contact & About Page
+    Author: Ramesh (Student ID: 10637942)
+    Description: Contact page with information about the website,
+    external resources for further learning, and contact details.
+    Includes links to Python documentation and learning platforms.
+    
+    File: contact.html
+    Last Updated: February 2026
+    ============================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Python Basics for Beginners and explore additional Python learning resources including official documentation and tutorials.">
+    <meta name="keywords" content="Contact, Python resources, Python documentation, learn Python, programming help">
+    <meta name="author" content="Python Basics for Beginners">
+
+    <!-- Page Title -->
+    <title>Contact & Resources | Python Basics for Beginners</title>
+
+    <!-- External Fonts and Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 
+        ============================================================
+        HEADER / NAVIGATION
+        ============================================================
+    -->
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐍</span>
+                <span>PyBasics</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lessons.html">Lessons</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="exercises.html">Exercises</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 
+        ============================================================
+        MAIN CONTENT
+        ============================================================
+    -->
+    <main>
+        <!-- Page Hero with background image -->
+        <section class="hero hero-with-image" style="min-height: 50vh; background-image: url('images/developer.jpg');">
+            <div class="hero-content">
+                <span class="hero-tagline">📬 Get in Touch</span>
+                <h1>Contact & <span class="gradient-text">Resources</span></h1>
+                <p class="hero-description">
+                    Have questions? Want to learn more? Find all the resources
+                    you need to continue your Python learning journey.
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+            ABOUT SECTION
+            Information about the website and its purpose
+        -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <!-- About the Website -->
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>About This Website</h3>
+                        <p>
+                            <strong>Python Basics for Beginners</strong> is a free, non-commercial
+                            educational resource designed to help complete beginners learn the
+                            fundamentals of Python programming.
+                        </p>
+                        <p>
+                            Our mission is to provide clear, beginner-friendly explanations
+                            without technical jargon, making programming accessible to everyone
+                            regardless of their background.
+                        </p>
+                        <p>
+                            This website was created as part of an academic project to demonstrate
+                            effective web design principles while providing genuine educational value.
+                        </p>
+                    </div>
+
+                    <!-- What We Offer -->
+                    <div class="card">
+                        <div class="card-icon">✨</div>
+                        <h3>What We Offer</h3>
+                        <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-secondary);">
+                            <li>Step-by-step lessons on Python fundamentals</li>
+                            <li>Clear explanations with practical code examples</li>
+                            <li>Hands-on exercises to practice your skills</li>
+                            <li>Curated links to trusted external resources</li>
+                            <li>Beginner-focused content with no prerequisites</li>
+                            <li>Completely free access — no sign-ups required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            EXTERNAL RESOURCES SECTION
+            Links to Python documentation and learning platforms
+            These are the required "external links" per assignment
+        -->
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>External <span class="gradient-text">Resources</span></h2>
+                    <p>
+                        Continue your Python journey with these trusted resources
+                        recommended for beginners.
+                    </p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Resource 1: Python.org -->
+                    <article class="card">
+                        <div class="card-icon">🐍</div>
+                        <h3>Python.org</h3>
+                        <p>
+                            The official Python website with documentation, downloads,
+                            and the latest news about Python development.
+                        </p>
+                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary mt-2">
+                            Visit Python.org
+                        </a>
+                    </article>
+
+                    <!-- Resource 2: W3Schools -->
+                    <article class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>W3Schools Python</h3>
+                        <p>
+                            Interactive Python tutorials with a "Try it Yourself" editor.
+                            Great for practicing code directly in your browser.
+                        </p>
+                        <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary mt-2">
+                            Visit W3Schools
+                        </a>
+                    </article>
+
+                    <!-- Resource 3: Python Wiki -->
+                    <article class="card">
+                        <div class="card-icon">📖</div>
+                        <h3>Python Wiki</h3>
+                        <p>
+                            Community-maintained wiki with beginner guides, tutorials,
+                            and advice on getting started with Python.
+                        </p>
+                        <a href="https://wiki.python.org/moin/BeginnersGuide" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary mt-2">
+                            Visit Python Wiki
+                        </a>
+                    </article>
+
+                    <!-- Resource 4: Khan Academy -->
+                    <article class="card">
+                        <div class="card-icon">🎓</div>
+                        <h3>Khan Academy</h3>
+                        <p>
+                            Free structured courses on computing fundamentals. Great for
+                            understanding programming concepts visually.
+                        </p>
+                        <a href="https://www.khanacademy.org/computing" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary mt-2">
+                            Visit Khan Academy
+                        </a>
+                    </article>
+
+                    <!-- Resource 5: Codecademy -->
+                    <article class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>Codecademy</h3>
+                        <p>
+                            Interactive coding lessons with immediate feedback. Offers
+                            free Python courses for beginners.
+                        </p>
+                        <a href="https://www.codecademy.com/catalog/language/python" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-sm btn-primary mt-2">
+                            Visit Codecademy
+                        </a>
+                    </article>
+
+                    <!-- Resource 6: Real Python -->
+                    <article class="card">
+                        <div class="card-icon">🔥</div>
+                        <h3>Real Python</h3>
+                        <p>
+                            In-depth Python tutorials and articles. Excellent for
+                            when you're ready to go beyond the basics.
+                        </p>
+                        <a href="https://realpython.com/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary mt-2">
+                            Visit Real Python
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            CONTACT INFORMATION SECTION
+            How to get in touch
+        -->
+        <section id="contact-info" class="contact-section">
+            <div class="container container-narrow">
+                <div class="section-header">
+                    <h2>Get in <span class="gradient-text">Touch</span></h2>
+                    <p>
+                        Have questions, feedback, or suggestions? We'd love to hear from you!
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-icon" style="margin: 0 auto var(--space-lg);">📧</div>
+                    <h3>Contact Us</h3>
+                    <p>
+                        For questions, suggestions, or feedback about Python Basics for Beginners,
+                        please reach out via email:
+                    </p>
+                    <p style="margin-top: var(--space-lg);">
+                        <a href="mailto:contact@pybasics.edu"
+                            style="color: var(--python-yellow); font-size: 1.25rem; font-weight: 600;">
+                            contact@pybasics.edu
+                        </a>
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: var(--space-lg);">
+                        We typically respond within 24-48 hours during business days.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            FAQ SECTION
+            Common questions and answers
+        -->
+        <section id="faq" class="faq-section">
+            <div class="container container-narrow">
+                <div class="section-header">
+                    <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                </div>
+
+                <!-- FAQ Item 1 -->
+                <div class="card mb-3">
+                    <h4>🤔 Do I need any prior programming experience?</h4>
+                    <p>
+                        No! Python Basics for Beginners is designed for complete beginners
+                        with no prior coding experience. We start from the very basics and
+                        explain everything step by step.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="card mb-3">
+                    <h4>💰 Is this website free to use?</h4>
+                    <p>
+                        Yes, completely free! Python Basics for Beginners is a non-commercial
+                        educational project. There are no sign-ups, subscriptions, or hidden fees.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="card mb-3">
+                    <h4>🖥️ What do I need to start learning Python?</h4>
+                    <p>
+                        You'll need a computer with Python installed. Visit
+                        <a href="https://www.python.org/downloads/" target="_blank"
+                            rel="noopener noreferrer">python.org/downloads</a>
+                        to download the latest version for your operating system.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="card mb-3">
+                    <h4>📱 Can I learn on my phone or tablet?</h4>
+                    <p>
+                        While you can read our lessons on any device, we recommend using
+                        a computer to practice writing code. Some mobile apps like Pydroid
+                        (Android) allow you to run Python code on mobile devices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            YOUTUBE: Getting Started with Python 
+            A helpful video for new learners visiting the resources page
+        -->
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container container-narrow">
+                <div class="section-header">
+                    <h2>Getting Started <span class="gradient-text">Guide</span></h2>
+                    <p>New to Python? Watch this beginner-friendly introduction video</p>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Y8Tko2YC5hA"
+                            title="Python Tutorial for Absolute Beginners"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>🌟 Python for Absolute Beginners</h4>
+                        <p>A gentle introduction to Python programming — perfect if you've never written a line of code
+                            before.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            IMAGE: Coding community inspiration
+        -->
+        <section style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="image-text-row reverse">
+                    <div>
+                        <img src="images/laptop-code.jpg" alt="Laptop showing code editor with Python programming"
+                            class="content-image">
+                    </div>
+                    <div>
+                        <h3>Join the <span class="gradient-text">Python Community</span></h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Python has one of the largest and most welcoming programming
+                            communities in the world. From online forums to local meetups,
+                            there are countless opportunities to connect with fellow learners
+                            and experienced developers who are happy to help.
+                        </p>
+                        <a href="https://www.python.org/community/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary mt-3">
+                            Python Community
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Ready to <span class="gradient-text">Start Learning</span>?</h2>
+                <p class="hero-description">
+                    Jump into our lessons or practice with hands-on exercises.
+                    Your Python journey begins here!
+                </p>
+                <div class="hero-buttons">
+                    <a href="lessons.html" class="btn btn-primary">
+                        Start Lessons
+                        <span>→</span>
+                    </a>
+                    <a href="exercises.html" class="btn btn-secondary">
+                        Try Exercises
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+        ============================================================
+        FOOTER
+        ============================================================
+    -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🐍 PyBasics</h4>
+                    <p>
+                        A free educational resource for learning Python
+                        programming fundamentals. Designed for complete
+                        beginners with no prior experience.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="lessons.html">Lessons</a>
+                        <a href="exercises.html">Exercises</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <nav class="footer-links">
+                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python.org</a>
+                        <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer">W3Schools
+                            Python</a>
+                        <a href="https://wiki.python.org/moin/BeginnersGuide" target="_blank"
+                            rel="noopener noreferrer">Python Wiki</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <nav class="footer-links">
+                        <a href="#about">About Us</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="mailto:contact@pybasics.edu">Email Us</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Python Basics for Beginners. Educational purposes only.</p>
+                <p>Made with ❤️ for Python learners</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileNav.contains(event.target) && !mobileBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

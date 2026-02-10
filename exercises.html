@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    PYTHON BASICS FOR BEGINNERS - Exercises Page
+    Author: Ramesh (Student ID: 10637942)
+    Description: Practice exercises page with hands-on coding 
+    challenges for each topic covered in the lessons. Exercises
+    are organized by difficulty (Easy, Medium, Hard).
+    
+    File: exercises.html
+    Last Updated: February 2026
+    ============================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- META TAGS for SEO and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Practice Python programming with hands-on exercises. Test your knowledge of variables, loops, conditionals, and functions with practical challenges.">
+    <meta name="keywords" content="Python exercises, coding practice, Python challenges, programming problems">
+    <meta name="author" content="Python Basics for Beginners">
+
+    <!-- Page Title -->
+    <title>Exercises | Python Basics for Beginners</title>
+
+    <!-- Load external fonts and stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 
+        ============================================================
+        HEADER / NAVIGATION
+        Consistent navigation across all pages
+        ============================================================
+    -->
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐍</span>
+                <span>PyBasics</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lessons.html">Lessons</a></li>
+                <li><a href="exercises.html" class="active">Exercises</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="exercises.html" class="active">Exercises</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 
+        ============================================================
+        MAIN CONTENT
+        Exercises organized by topic with difficulty levels
+        ============================================================
+    -->
+    <main>
+        <!-- Page Hero Section with background image -->
+        <section class="hero hero-with-image"
+            style="min-height: 60vh; background-image: url('images/code-screen.jpg');">
+            <div class="hero-content">
+                <span class="hero-tagline">💪 Practice Makes Perfect</span>
+                <h1>Python <span class="gradient-text">Exercises</span></h1>
+                <p class="hero-description">
+                    Put your Python knowledge to the test! These hands-on exercises
+                    will help reinforce what you've learned and build your confidence.
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+            HOW TO USE SECTION
+            Instructions for practicing with exercises
+        -->
+        <section class="info-section">
+            <div class="container container-narrow">
+                <div class="card">
+                    <h3>📋 How to Practice</h3>
+                    <div class="grid grid-3 mt-3">
+                        <div class="text-center p-2">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">1️⃣</div>
+                            <p><strong>Read the problem</strong> carefully</p>
+                        </div>
+                        <div class="text-center p-2">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">2️⃣</div>
+                            <p><strong>Try solving it</strong> on your own first</p>
+                        </div>
+                        <div class="text-center p-2">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">3️⃣</div>
+                            <p><strong>Check the hint</strong> if you get stuck</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            VARIABLES EXERCISES
+            Practice exercises for variables and data types
+            ============================================================
+        -->
+        <section id="variables-exercises" class="topic-section">
+            <div class="container">
+                <div class="topic-header">
+                    <span class="topic-number">📦</span>
+                    <div>
+                        <h2>Variables & Data Types <span class="gradient-text">Exercises</span></h2>
+                        <p>Practice creating and using variables</p>
+                    </div>
+                </div>
+
+                <!-- Exercise 1: Easy -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-easy">Easy</span>
+                    <h4>Exercise 1: Personal Info Variables</h4>
+                    <p>
+                        Create variables to store your personal information:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li>Your name (string)</li>
+                        <li>Your age (integer)</li>
+                        <li>Your height in meters (float)</li>
+                        <li>Whether you like Python (boolean)</li>
+                    </ul>
+                    <p>Print all variables to the console.</p>
+
+                    <div class="tip-box mt-3">
+                        <h4>💡 Hint</h4>
+                        <p>Remember: strings need quotes, numbers don't, booleans are <code>True</code> or
+                            <code>False</code>.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Exercise 2: Easy -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-easy">Easy</span>
+                    <h4>Exercise 2: Simple Calculator</h4>
+                    <p>
+                        Create two number variables, then calculate and print:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li>Their sum</li>
+                        <li>Their difference</li>
+                        <li>Their product</li>
+                        <li>Their division result</li>
+                    </ul>
+
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span>Expected Output Example</span>
+                        </div>
+                        <pre><code><span class="code-comment"># If num1 = 10 and num2 = 3</span>
+Sum: 13
+Difference: 7
+Product: 30
+Division: 3.333...</code></pre>
+                    </div>
+                </article>
+
+                <!-- Exercise 3: Medium -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-medium">Medium</span>
+                    <h4>Exercise 3: String Formatting</h4>
+                    <p>
+                        Create variables for a product's name, price, and quantity.
+                        Then print a formatted receipt message using f-strings.
+                    </p>
+
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span>Expected Output</span>
+                        </div>
+                        <pre><code>Receipt:
+Product: Python Book
+Price: $29.99
+Quantity: 2
+Total: $59.98</code></pre>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            LOOPS EXERCISES
+            Practice exercises for for and while loops
+            ============================================================
+        -->
+        <section id="loops-exercises" class="topic-section">
+            <div class="container">
+                <div class="topic-header">
+                    <span class="topic-number">🔄</span>
+                    <div>
+                        <h2>Loops <span class="gradient-text">Exercises</span></h2>
+                        <p>Practice iteration and repetition</p>
+                    </div>
+                </div>
+
+                <!-- Exercise 4: Easy -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-easy">Easy</span>
+                    <h4>Exercise 4: Counting Up</h4>
+                    <p>
+                        Write a <code>for</code> loop that prints numbers from 1 to 10 (inclusive).
+                    </p>
+
+                    <div class="tip-box mt-3">
+                        <h4>💡 Hint</h4>
+                        <p>Use <code>range(1, 11)</code> — the second number is exclusive!</p>
+                    </div>
+                </article>
+
+                <!-- Exercise 5: Easy -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-easy">Easy</span>
+                    <h4>Exercise 5: List Loop</h4>
+                    <p>
+                        Create a list of 5 of your favorite foods. Use a <code>for</code> loop
+                        to print each food with "I love" before it.
+                    </p>
+
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span>Expected Output Example</span>
+                        </div>
+                        <pre><code>I love pizza
+I love sushi
+I love tacos
+I love pasta
+I love ice cream</code></pre>
+                    </div>
+                </article>
+
+                <!-- Exercise 6: Medium -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-medium">Medium</span>
+                    <h4>Exercise 6: Sum Calculator</h4>
+                    <p>
+                        Use a <code>while</code> loop to calculate the sum of all numbers from 1 to 100.
+                        Print the final sum at the end.
+                    </p>
+
+                    <div class="tip-box mt-3">
+                        <h4>💡 Hint</h4>
+                        <p>Create a <code>total</code> variable starting at 0, and add each number to it.</p>
+                    </div>
+                </article>
+
+                <!-- Exercise 7: Hard -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-hard">Hard</span>
+                    <h4>Exercise 7: Multiplication Table</h4>
+                    <p>
+                        Write a program that prints the multiplication table for a given number (1-10).
+                        Use nested loops or a single loop.
+                    </p>
+
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span>Expected Output (for 5)</span>
+                        </div>
+                        <pre><code>5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+...
+5 x 10 = 50</code></pre>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            CONDITIONALS EXERCISES
+            Practice exercises for if/elif/else statements
+            ============================================================
+        -->
+        <section id="conditionals-exercises" class="topic-section">
+            <div class="container">
+                <div class="topic-header">
+                    <span class="topic-number">🔀</span>
+                    <div>
+                        <h2>Conditionals <span class="gradient-text">Exercises</span></h2>
+                        <p>Practice decision-making in code</p>
+                    </div>
+                </div>
+
+                <!-- Exercise 8: Easy -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-easy">Easy</span>
+                    <h4>Exercise 8: Age Checker</h4>
+                    <p>
+                        Create a variable for age. Write an <code>if-else</code> statement that:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li>Prints "You can vote!" if age is 18 or older</li>
+                        <li>Prints "You cannot vote yet" otherwise</li>
+                    </ul>
+                </article>
+
+                <!-- Exercise 9: Medium -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-medium">Medium</span>
+                    <h4>Exercise 9: Grade Calculator</h4>
+                    <p>
+                        Write a program that takes a score (0-100) and prints the corresponding grade:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li>90-100: A</li>
+                        <li>80-89: B</li>
+                        <li>70-79: C</li>
+                        <li>60-69: D</li>
+                        <li>Below 60: F</li>
+                    </ul>
+
+                    <div class="tip-box mt-3">
+                        <h4>💡 Hint</h4>
+                        <p>Use <code>if</code>, <code>elif</code>, <code>elif</code>, <code>elif</code>,
+                            <code>else</code> structure.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Exercise 10: Hard -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-hard">Hard</span>
+                    <h4>Exercise 10: Leap Year Checker</h4>
+                    <p>
+                        Write a program that checks if a year is a leap year. A year is a leap year if:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li>It's divisible by 4</li>
+                        <li>BUT NOT divisible by 100</li>
+                        <li>UNLESS it's also divisible by 400</li>
+                    </ul>
+
+                    <div class="tip-box mt-3">
+                        <h4>💡 Hint</h4>
+                        <p>Use the modulo operator <code>%</code> to check divisibility. If <code>year % 4 == 0</code>,
+                            it's divisible by 4.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            FUNCTIONS EXERCISES
+            Practice exercises for creating and using functions
+            ============================================================
+        -->
+        <section id="functions-exercises" class="topic-section">
+            <div class="container">
+                <div class="topic-header">
+                    <span class="topic-number">⚙️</span>
+                    <div>
+                        <h2>Functions <span class="gradient-text">Exercises</span></h2>
+                        <p>Practice creating reusable code</p>
+                    </div>
+                </div>
+
+                <!-- Exercise 11: Easy -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-easy">Easy</span>
+                    <h4>Exercise 11: Greeting Function</h4>
+                    <p>
+                        Create a function called <code>greet</code> that takes a name as a parameter
+                        and prints "Hello, [name]! Nice to meet you."
+                    </p>
+                    <p>
+                        Call the function with at least 3 different names.
+                    </p>
+                </article>
+
+                <!-- Exercise 12: Medium -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-medium">Medium</span>
+                    <h4>Exercise 12: Area Calculator</h4>
+                    <p>
+                        Create a function called <code>calculate_rectangle_area</code> that:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li>Takes width and height as parameters</li>
+                        <li>Returns the area (width × height)</li>
+                    </ul>
+                    <p>
+                        Test it by calculating areas of 3 different rectangles.
+                    </p>
+                </article>
+
+                <!-- Exercise 13: Hard -->
+                <article class="exercise-card">
+                    <span class="exercise-difficulty difficulty-hard">Hard</span>
+                    <h4>Exercise 13: Temperature Converter</h4>
+                    <p>
+                        Create two functions:
+                    </p>
+                    <ul style="padding-left: 1.5rem; list-style: disc; color: var(--text-muted);">
+                        <li><code>celsius_to_fahrenheit(celsius)</code> — converts and returns Fahrenheit</li>
+                        <li><code>fahrenheit_to_celsius(fahrenheit)</code> — converts and returns Celsius</li>
+                    </ul>
+                    <p>
+                        Formulas: <code>F = C × 9/5 + 32</code> and <code>C = (F - 32) × 5/9</code>
+                    </p>
+
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span>Test Cases</span>
+                        </div>
+                        <pre><code><span class="code-comment"># Test your functions with these:</span>
+<span class="code-function">print</span>(celsius_to_fahrenheit(<span class="code-number">0</span>))     <span class="code-comment"># Should print: 32</span>
+<span class="code-function">print</span>(celsius_to_fahrenheit(<span class="code-number">100</span>))   <span class="code-comment"># Should print: 212</span>
+<span class="code-function">print</span>(fahrenheit_to_celsius(<span class="code-number">32</span>))    <span class="code-comment"># Should print: 0</span>
+<span class="code-function">print</span>(fahrenheit_to_celsius(<span class="code-number">212</span>))   <span class="code-comment"># Should print: 100</span></code></pre>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            COMMON ERRORS SECTION
+            Sidebar-style section with common mistakes to avoid
+        -->
+        <section class="errors-section">
+            <div class="container container-narrow">
+                <div class="card">
+                    <h3>🚫 Common Errors to Avoid</h3>
+                    <p>Watch out for these common beginner mistakes:</p>
+
+                    <div class="grid grid-2 mt-3">
+                        <div class="note-box">
+                            <h4>IndentationError</h4>
+                            <p>Python requires consistent spacing. Use 4 spaces for each indentation level.</p>
+                        </div>
+                        <div class="note-box">
+                            <h4>SyntaxError</h4>
+                            <p>Missing colons after <code>if</code>, <code>for</code>, <code>while</code>, or
+                                <code>def</code> statements.
+                            </p>
+                        </div>
+                        <div class="note-box">
+                            <h4>NameError</h4>
+                            <p>Using a variable before defining it, or misspelling a variable name.</p>
+                        </div>
+                        <div class="note-box">
+                            <h4>TypeError</h4>
+                            <p>Trying to combine incompatible types (like adding a string to a number).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            YOUTUBE PRACTICE VIDEOS
+            Video tutorials for solving Python exercises and practice problems
+        -->
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Practice Along with <span class="gradient-text">Video Tutorials</span></h2>
+                    <p>Watch experienced developers solve Python exercises and learn debugging techniques</p>
+                </div>
+
+                <div class="grid grid-2">
+                    <!-- YouTube: Python Practice Problems -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/8ext9G7xspg"
+                                title="Python Practice Problems for Beginners"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>🎯 Solve Python Exercises</h4>
+                            <p>Step-by-step solutions to common Python beginner exercises and challenges.</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube: Python Debugging -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/IYZXIzs1pG4"
+                                title="Python Debugging Tips for Beginners"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>🔍 Debugging Python Code</h4>
+                            <p>Learn how to find and fix common errors in your Python code effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            MOTIVATIONAL IMAGE SECTION 
+            Encourage practice with a visual + text layout
+        -->
+        <section style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="image-text-row">
+                    <div>
+                        <img src="images/programming.jpg" alt="Code on a monitor screen showing programming concepts"
+                            class="content-image">
+                    </div>
+                    <div>
+                        <h3>Practice Creates <span class="gradient-text">Mastery</span></h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Research shows that solving coding problems is the most effective
+                            way to learn programming. Each exercise you complete builds new
+                            neural pathways and deepens your understanding. Don't be afraid
+                            to make mistakes — they're part of the learning process!
+                        </p>
+                        <a href="lessons.html" class="btn btn-sm btn-primary mt-3">Review Lessons →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Need More <span class="gradient-text">Help</span>?</h2>
+                <p class="hero-description">
+                    Review the lessons if you're stuck, or check out our
+                    curated external resources for deeper learning.
+                </p>
+                <div class="hero-buttons">
+                    <a href="lessons.html" class="btn btn-primary">
+                        Review Lessons
+                        <span>→</span>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        External Resources
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+        ============================================================
+        FOOTER
+        ============================================================
+    -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🐍 PyBasics</h4>
+                    <p>
+                        A free educational resource for learning Python
+                        programming fundamentals. Designed for complete
+                        beginners with no prior experience.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="lessons.html">Lessons</a>
+                        <a href="exercises.html">Exercises</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <nav class="footer-links">
+                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python.org</a>
+                        <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer">W3Schools
+                            Python</a>
+                        <a href="https://wiki.python.org/moin/BeginnersGuide" target="_blank"
+                            rel="noopener noreferrer">Python Wiki</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Exercises</h4>
+                    <nav class="footer-links">
+                        <a href="#variables-exercises">Variables</a>
+                        <a href="#loops-exercises">Loops</a>
+                        <a href="#conditionals-exercises">Conditionals</a>
+                        <a href="#functions-exercises">Functions</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Python Basics for Beginners. Educational purposes only.</p>
+                <p>Made with ❤️ for Python learners</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileNav.contains(event.target) && !mobileBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

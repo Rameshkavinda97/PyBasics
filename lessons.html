@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    PYTHON BASICS FOR BEGINNERS - Lessons Page
+    Author: Ramesh (Student ID: 10637942)
+    Description: Main lessons page containing Python tutorials 
+    covering variables, data types, loops, conditionals, and functions.
+    Each topic includes explanations and practical code examples.
+    
+    File: lessons.html
+    Last Updated: February 2026
+    ============================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- 
+        META TAGS
+        Essential meta information for character encoding,
+        responsive design, and search engine optimization.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn Python programming with our comprehensive lessons covering variables, loops, conditionals, and functions with practical examples.">
+    <meta name="keywords"
+        content="Python lessons, learn Python, Python tutorial, variables, loops, functions, conditionals">
+    <meta name="author" content="Python Basics for Beginners">
+
+    <!-- Page Title -->
+    <title>Lessons | Python Basics for Beginners</title>
+
+    <!-- 
+        EXTERNAL RESOURCES
+        Google Fonts for typography
+        Main stylesheet for visual design
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 
+        ============================================================
+        HEADER / NAVIGATION
+        Same navigation structure as all pages for consistency.
+        ============================================================
+    -->
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🐍</span>
+                <span>PyBasics</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lessons.html" class="active">Lessons</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="lessons.html" class="active">Lessons</a>
+            <a href="exercises.html">Exercises</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 
+        ============================================================
+        MAIN CONTENT
+        Contains all lesson content organized by topic
+        ============================================================
+    -->
+    <main>
+        <!-- 
+            PAGE HERO SECTION
+            Introduction to the lessons page
+        -->
+        <!-- Hero section with background image -->
+        <section class="hero hero-with-image"
+            style="min-height: 60vh; background-image: url('images/syntax-highlight.jpg');">
+            <div class="hero-content">
+                <span class="hero-tagline">📖 Python Lessons</span>
+                <h1>Learn Python <span class="gradient-text">Step by Step</span></h1>
+                <p class="hero-description">
+                    Master the fundamentals of Python programming with our structured
+                    lessons. Each topic builds on the previous one, taking you from
+                    complete beginner to confident coder.
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+            QUICK NAVIGATION
+            Jump links to each lesson topic for easy navigation
+        -->
+        <section class="topics-nav">
+            <div class="container">
+                <div class="grid grid-4 text-center">
+                    <a href="#variables" class="card feature-card">
+                        <div class="card-icon">📦</div>
+                        <h4>Variables</h4>
+                    </a>
+                    <a href="#loops" class="card feature-card">
+                        <div class="card-icon">🔄</div>
+                        <h4>Loops</h4>
+                    </a>
+                    <a href="#conditionals" class="card feature-card">
+                        <div class="card-icon">🔀</div>
+                        <h4>Conditionals</h4>
+                    </a>
+                    <a href="#functions" class="card feature-card">
+                        <div class="card-icon">⚙️</div>
+                        <h4>Functions</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            LESSON 1: VARIABLES & DATA TYPES
+            Covers how to store data, naming conventions, 
+            and the basic data types in Python.
+            ============================================================
+        -->
+        <section id="variables" class="topic-section">
+            <div class="container">
+                <!-- Topic Header -->
+                <div class="topic-header">
+                    <span class="topic-number">1</span>
+                    <div>
+                        <h2>Variables & <span class="gradient-text">Data Types</span></h2>
+                        <p>Learn how to store and manage data in your programs</p>
+                    </div>
+                </div>
+
+                <!-- Introduction to Variables -->
+                <div class="card mb-4">
+                    <h3>What is a Variable?</h3>
+                    <p>
+                        Think of a variable as a <strong>labeled container</strong> that holds information.
+                        Just like you might have a box labeled "Photos" to store pictures, a variable
+                        stores data that your program can use and change.
+                    </p>
+                    <p>
+                        In Python, you create a variable by giving it a name and assigning a value
+                        using the equals sign (<code>=</code>).
+                    </p>
+
+                    <!-- Code Example: Creating Variables -->
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Python</span>
+                            <span>variables.py</span>
+                        </div>
+                        <pre><code><span class="code-comment"># Creating variables - storing different types of data</span>
+
+<span class="code-comment"># String (text) - wrapped in quotes</span>
+name = <span class="code-string">"Alice"</span>
+greeting = <span class="code-string">'Hello, World!'</span>
+
+<span class="code-comment"># Integer (whole number) - no quotes needed</span>
+age = <span class="code-number">25</span>
+year = <span class="code-number">2026</span>
+
+<span class="code-comment"># Float (decimal number)</span>
+price = <span class="code-number">19.99</span>
+temperature = <span class="code-number">36.6</span>
+
+<span class="code-comment"># Boolean (True or False)</span>
+is_student = <span class="code-keyword">True</span>
+has_license = <span class="code-keyword">False</span>
+
+<span class="code-comment"># Printing variables to see their values</span>
+<span class="code-function">print</span>(name)        <span class="code-comment"># Output: Alice</span>
+<span class="code-function">print</span>(age)         <span class="code-comment"># Output: 25</span>
+<span class="code-function">print</span>(is_student)  <span class="code-comment"># Output: True</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- Image and text row: Visual representation of variables -->
+                <div class="image-text-row">
+                    <div>
+                        <img src="images/laptop-code.jpg" alt="Code editor showing Python variables on a laptop screen"
+                            class="content-image">
+                    </div>
+                    <div>
+                        <h3>💻 Variables in <span class="gradient-text">Action</span></h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Variables are the building blocks of every program.
+                            They allow your code to store, retrieve, and manipulate
+                            data dynamically. As you progress, you'll see variables
+                            in every program you write!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tip Box: Naming Variables -->
+                <div class="tip-box">
+                    <h4>💡 Variable Naming Rules</h4>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: disc;">
+                        <li>Use descriptive names: <code>user_age</code> is better than <code>x</code></li>
+                        <li>Start with a letter or underscore, not a number</li>
+                        <li>Use lowercase with underscores: <code>first_name</code> (snake_case)</li>
+                        <li>Avoid Python keywords like <code>print</code>, <code>if</code>, <code>for</code></li>
+                    </ul>
+                </div>
+
+                <!-- Data Types Explanation -->
+                <div class="card mt-4">
+                    <h3>Python Data Types</h3>
+                    <p>Here are the four basic data types you'll use most often:</p>
+
+                    <div class="grid grid-2 mt-3">
+                        <div class="note-box">
+                            <h4>📝 String (str)</h4>
+                            <p>Text data wrapped in quotes. Can use single or double quotes.</p>
+                            <code>"Hello"</code> or <code>'World'</code>
+                        </div>
+                        <div class="note-box">
+                            <h4>🔢 Integer (int)</h4>
+                            <p>Whole numbers without decimals. Can be positive or negative.</p>
+                            <code>42</code>, <code>-10</code>, <code>0</code>
+                        </div>
+                        <div class="note-box">
+                            <h4>📊 Float (float)</h4>
+                            <p>Numbers with decimal points for precision.</p>
+                            <code>3.14</code>, <code>-0.5</code>, <code>100.0</code>
+                        </div>
+                        <div class="note-box">
+                            <h4>✅ Boolean (bool)</h4>
+                            <p>Only two values: True or False. Used for decisions.</p>
+                            <code>True</code>, <code>False</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Video: Python Variables Tutorial -->
+                <div class="video-card mt-4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/cQT33yu9pY8"
+                            title="Python Variables Tutorial - Learn Python Programming"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>🎬 Video: Python Variables Explained</h4>
+                        <p>Watch this visual tutorial to reinforce your understanding of Python variables and data
+                            types.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            LESSON 2: LOOPS & ITERATION
+            Covers for loops and while loops for repeating code.
+            ============================================================
+        -->
+        <section id="loops" class="topic-section">
+            <div class="container">
+                <!-- Topic Header -->
+                <div class="topic-header">
+                    <span class="topic-number">2</span>
+                    <div>
+                        <h2>Loops & <span class="gradient-text">Iteration</span></h2>
+                        <p>Repeat actions efficiently without writing redundant code</p>
+                    </div>
+                </div>
+
+                <!-- Introduction to Loops -->
+                <div class="card mb-4">
+                    <h3>Why Use Loops?</h3>
+                    <p>
+                        Imagine you need to print "Hello" 100 times. Without loops, you'd have to
+                        write <code>print("Hello")</code> 100 times! Loops let you repeat code
+                        <strong>automatically</strong> — saving time and making your code cleaner.
+                    </p>
+                </div>
+
+                <!-- For Loop -->
+                <div class="card mb-4">
+                    <h3>The For Loop</h3>
+                    <p>
+                        A <code>for</code> loop repeats code for each item in a sequence
+                        (like a list or range of numbers). It's perfect when you know
+                        <strong>how many times</strong> you want to repeat.
+                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Python</span>
+                            <span>for_loop.py</span>
+                        </div>
+                        <pre><code><span class="code-comment"># For loop with range() - repeat 5 times</span>
+<span class="code-keyword">for</span> i <span class="code-keyword">in</span> <span class="code-function">range</span>(<span class="code-number">5</span>):
+    <span class="code-function">print</span>(<span class="code-string">f"Count: {i}"</span>)
+
+<span class="code-comment"># Output:</span>
+<span class="code-comment"># Count: 0</span>
+<span class="code-comment"># Count: 1</span>
+<span class="code-comment"># Count: 2</span>
+<span class="code-comment"># Count: 3</span>
+<span class="code-comment"># Count: 4</span>
+
+<span class="code-comment"># For loop with a list</span>
+fruits = [<span class="code-string">"apple"</span>, <span class="code-string">"banana"</span>, <span class="code-string">"cherry"</span>]
+<span class="code-keyword">for</span> fruit <span class="code-keyword">in</span> fruits:
+    <span class="code-function">print</span>(<span class="code-string">f"I love {fruit}!"</span>)
+
+<span class="code-comment"># Output:</span>
+<span class="code-comment"># I love apple!</span>
+<span class="code-comment"># I love banana!</span>
+<span class="code-comment"># I love cherry!</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- While Loop -->
+                <div class="card mb-4">
+                    <h3>The While Loop</h3>
+                    <p>
+                        A <code>while</code> loop repeats code <strong>as long as</strong> a condition
+                        is true. It's useful when you don't know exactly how many times you need to repeat.
+                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Python</span>
+                            <span>while_loop.py</span>
+                        </div>
+                        <pre><code><span class="code-comment"># While loop - repeat until condition is false</span>
+count = <span class="code-number">0</span>
+
+<span class="code-keyword">while</span> count < <span class="code-number">3</span>:
+    <span class="code-function">print</span>(<span class="code-string">f"Count is: {count}"</span>)
+    count = count + <span class="code-number">1</span>  <span class="code-comment"># Important: update the counter!</span>
+
+<span class="code-function">print</span>(<span class="code-string">"Loop finished!"</span>)
+
+<span class="code-comment"># Output:</span>
+<span class="code-comment"># Count is: 0</span>
+<span class="code-comment"># Count is: 1</span>
+<span class="code-comment"># Count is: 2</span>
+<span class="code-comment"># Loop finished!</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- Warning about infinite loops -->
+                <div class="tip-box" style="background: rgba(255, 85, 85, 0.1); border-color: #ff5555;">
+                    <h4>⚠️ Watch Out: Infinite Loops</h4>
+                    <p>
+                        If the condition in a <code>while</code> loop never becomes <code>False</code>,
+                        your program will run forever! Always make sure to update variables inside
+                        the loop so it can eventually stop.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            LESSON 3: CONDITIONALS (IF/ELSE)
+            Covers decision-making with if, elif, and else statements.
+            ============================================================
+        -->
+        <section id="conditionals" class="topic-section">
+            <div class="container">
+                <!-- Topic Header -->
+                <div class="topic-header">
+                    <span class="topic-number">3</span>
+                    <div>
+                        <h2>Conditionals <span class="gradient-text">(If/Else)</span></h2>
+                        <p>Make your programs smart with decision-making</p>
+                    </div>
+                </div>
+
+                <!-- Introduction -->
+                <div class="card mb-4">
+                    <h3>Making Decisions in Code</h3>
+                    <p>
+                        Just like you make decisions every day ("If it's raining, I'll take an umbrella"),
+                        programs use <strong>conditionals</strong> to choose different actions based on
+                        certain conditions.
+                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Python</span>
+                            <span>conditionals.py</span>
+                        </div>
+                        <pre><code><span class="code-comment"># Basic if statement</span>
+age = <span class="code-number">18</span>
+
+<span class="code-keyword">if</span> age >= <span class="code-number">18</span>:
+    <span class="code-function">print</span>(<span class="code-string">"You are an adult!"</span>)
+
+<span class="code-comment"># If-else statement</span>
+temperature = <span class="code-number">25</span>
+
+<span class="code-keyword">if</span> temperature > <span class="code-number">30</span>:
+    <span class="code-function">print</span>(<span class="code-string">"It's hot outside!"</span>)
+<span class="code-keyword">else</span>:
+    <span class="code-function">print</span>(<span class="code-string">"The weather is nice."</span>)
+
+<span class="code-comment"># If-elif-else for multiple conditions</span>
+score = <span class="code-number">85</span>
+
+<span class="code-keyword">if</span> score >= <span class="code-number">90</span>:
+    grade = <span class="code-string">"A"</span>
+<span class="code-keyword">elif</span> score >= <span class="code-number">80</span>:
+    grade = <span class="code-string">"B"</span>
+<span class="code-keyword">elif</span> score >= <span class="code-number">70</span>:
+    grade = <span class="code-string">"C"</span>
+<span class="code-keyword">else</span>:
+    grade = <span class="code-string">"F"</span>
+
+<span class="code-function">print</span>(<span class="code-string">f"Your grade is: {grade}"</span>)  <span class="code-comment"># Output: Your grade is: B</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- Comparison Operators -->
+                <div class="card mb-4">
+                    <h3>Comparison Operators</h3>
+                    <p>Use these operators to compare values:</p>
+
+                    <div class="grid grid-3 mt-3">
+                        <div class="note-box text-center">
+                            <code>==</code>
+                            <p>Equal to</p>
+                        </div>
+                        <div class="note-box text-center">
+                            <code>!=</code>
+                            <p>Not equal to</p>
+                        </div>
+                        <div class="note-box text-center">
+                            <code>&gt;</code>
+                            <p>Greater than</p>
+                        </div>
+                        <div class="note-box text-center">
+                            <code>&lt;</code>
+                            <p>Less than</p>
+                        </div>
+                        <div class="note-box text-center">
+                            <code>&gt;=</code>
+                            <p>Greater or equal</p>
+                        </div>
+                        <div class="note-box text-center">
+                            <code>&lt;=</code>
+                            <p>Less or equal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tip about indentation -->
+                <div class="tip-box">
+                    <h4>💡 Indentation Matters!</h4>
+                    <p>
+                        Python uses <strong>indentation</strong> (spaces at the beginning of lines)
+                        to group code. The code inside an <code>if</code> statement must be indented
+                        (usually 4 spaces). This is what makes Python unique and readable!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ============================================================
+            LESSON 4: FUNCTIONS
+            Covers creating and using functions with parameters
+            and return values.
+            ============================================================
+        -->
+        <section id="functions" class="topic-section">
+            <div class="container">
+                <!-- Topic Header -->
+                <div class="topic-header">
+                    <span class="topic-number">4</span>
+                    <div>
+                        <h2><span class="gradient-text">Functions</span></h2>
+                        <p>Organize your code into reusable building blocks</p>
+                    </div>
+                </div>
+
+                <!-- Introduction to Functions -->
+                <div class="card mb-4">
+                    <h3>What is a Function?</h3>
+                    <p>
+                        A function is a <strong>reusable block of code</strong> that performs a specific task.
+                        Instead of writing the same code over and over, you can define it once in a function
+                        and call it whenever you need it.
+                    </p>
+                    <p>
+                        Think of it like a recipe: you write the instructions once, then follow them
+                        whenever you want to make that dish.
+                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Python</span>
+                            <span>functions.py</span>
+                        </div>
+                        <pre><code><span class="code-comment"># Defining a simple function</span>
+<span class="code-keyword">def</span> <span class="code-function">say_hello</span>():
+    <span class="code-string">"""This function prints a greeting."""</span>
+    <span class="code-function">print</span>(<span class="code-string">"Hello, World!"</span>)
+
+<span class="code-comment"># Calling the function</span>
+say_hello()  <span class="code-comment"># Output: Hello, World!</span>
+say_hello()  <span class="code-comment"># You can call it multiple times</span>
+
+<span class="code-comment"># Function with a parameter</span>
+<span class="code-keyword">def</span> <span class="code-function">greet</span>(name):
+    <span class="code-string">"""Greet a person by name."""</span>
+    <span class="code-function">print</span>(<span class="code-string">f"Hello, {name}!"</span>)
+
+greet(<span class="code-string">"Alice"</span>)   <span class="code-comment"># Output: Hello, Alice!</span>
+greet(<span class="code-string">"Bob"</span>)     <span class="code-comment"># Output: Hello, Bob!</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- Functions with Return Values -->
+                <div class="card mb-4">
+                    <h3>Return Values</h3>
+                    <p>
+                        Functions can <strong>return</strong> a value back to where they were called.
+                        This is useful when you need to use the result of a calculation.
+                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Python</span>
+                            <span>return_values.py</span>
+                        </div>
+                        <pre><code><span class="code-comment"># Function that returns a value</span>
+<span class="code-keyword">def</span> <span class="code-function">add_numbers</span>(a, b):
+    <span class="code-string">"""Add two numbers and return the result."""</span>
+    result = a + b
+    <span class="code-keyword">return</span> result
+
+<span class="code-comment"># Using the returned value</span>
+total = add_numbers(<span class="code-number">5</span>, <span class="code-number">3</span>)
+<span class="code-function">print</span>(<span class="code-string">f"5 + 3 = {total}"</span>)  <span class="code-comment"># Output: 5 + 3 = 8</span>
+
+<span class="code-comment"># You can use the result directly</span>
+<span class="code-function">print</span>(add_numbers(<span class="code-number">10</span>, <span class="code-number">20</span>))  <span class="code-comment"># Output: 30</span>
+
+<span class="code-comment"># A more practical example</span>
+<span class="code-keyword">def</span> <span class="code-function">calculate_area</span>(width, height):
+    <span class="code-string">"""Calculate the area of a rectangle."""</span>
+    <span class="code-keyword">return</span> width * height
+
+room_area = calculate_area(<span class="code-number">10</span>, <span class="code-number">12</span>)
+<span class="code-function">print</span>(<span class="code-string">f"Room area: {room_area} square meters"</span>)</code></pre>
+                    </div>
+                </div>
+
+                <!-- Best Practices -->
+                <div class="tip-box">
+                    <h4>💡 Function Best Practices</h4>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: disc;">
+                        <li>Give functions <strong>descriptive names</strong> that explain what they do</li>
+                        <li>Keep functions <strong>focused</strong> on one task</li>
+                        <li>Add a <strong>docstring</strong> (description in triple quotes) to explain the function</li>
+                        <li>Use <strong>parameters</strong> to make functions flexible</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            RECOMMENDED YOUTUBE TUTORIALS SECTION
+            Additional video resources for deeper learning
+        -->
+        <section style="padding: var(--space-3xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recommended <span class="gradient-text">Video Tutorials</span></h2>
+                    <p>Supplement your learning with these excellent YouTube tutorials from expert educators</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- YouTube: Python Loops Tutorial -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/94UHCEmprCY"
+                                title="Python Loops Tutorial - For & While Loops"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>🔄 Python Loops</h4>
+                            <p>Master for loops and while loops with clear examples</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube: Python If Else Tutorial -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Zp5MuPOtsSY"
+                                title="Python If Else Statements Tutorial"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>🔀 If/Else Statements</h4>
+                            <p>Learn conditionals and decision-making in Python</p>
+                        </div>
+                    </div>
+
+                    <!-- YouTube: Python Functions Tutorial -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/9Os0o3wzS_I" title="Python Functions Tutorial"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>⚙️ Python Functions</h4>
+                            <p>Understanding functions, parameters, and return values</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            IMAGE ROW: Coding workspace inspiration 
+            Visual representation of a developer's learning journey
+        -->
+        <section style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="image-text-row reverse">
+                    <div>
+                        <img src="images/developer.jpg"
+                            alt="Modern developer workspace with multiple monitors showing code" class="content-image">
+                    </div>
+                    <div>
+                        <h3>From Beginner to <span class="gradient-text">Developer</span></h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Every expert programmer started exactly where you are now.
+                            With consistent practice and dedication, you'll be writing
+                            complex programs and building real projects in no time.
+                            The key is to keep coding every day!
+                        </p>
+                        <a href="exercises.html" class="btn btn-sm btn-primary mt-3">Start Practicing →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            NEXT STEPS SECTION
+            Guide users to practice what they've learned
+        -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Ready to <span class="gradient-text">Practice</span>?</h2>
+                <p class="hero-description">
+                    Now that you've learned the fundamentals, it's time to put your
+                    knowledge into practice with hands-on exercises.
+                </p>
+                <div class="hero-buttons">
+                    <a href="exercises.html" class="btn btn-primary">
+                        Try Exercises
+                        <span>→</span>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        More Resources
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+        ============================================================
+        FOOTER
+        Consistent footer across all pages
+        ============================================================
+    -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🐍 PyBasics</h4>
+                    <p>
+                        A free educational resource for learning Python
+                        programming fundamentals. Designed for complete
+                        beginners with no prior experience.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="lessons.html">Lessons</a>
+                        <a href="exercises.html">Exercises</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <nav class="footer-links">
+                        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python.org</a>
+                        <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer">W3Schools
+                            Python</a>
+                        <a href="https://wiki.python.org/moin/BeginnersGuide" target="_blank"
+                            rel="noopener noreferrer">Python Wiki</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Topics</h4>
+                    <nav class="footer-links">
+                        <a href="#variables">Variables</a>
+                        <a href="#loops">Loops</a>
+                        <a href="#conditionals">Conditionals</a>
+                        <a href="#functions">Functions</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Python Basics for Beginners. Educational purposes only.</p>
+                <p>Made with ❤️ for Python learners</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+
+            if (!mobileNav.contains(event.target) && !mobileBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
